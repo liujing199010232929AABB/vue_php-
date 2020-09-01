@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>挂载点和变量</title>
+    <script src="vue-2.6.11/dist/vue.js"></script>
+</head>
+<body>
+    <!--在当前页面中创建一个挂载点-->
+    <div id="box">
+        <!--使用{{变量名}}，插值-->
+        <p>{{message1}}</p>
+        <!--使用模板指令：挂载点作用域的都是模板 v-text,通常都是写到标签属性中-->
+        <p v-text="message1"></p>
+        <!--使用模板指令：v-html，将字符串中的html解析出来-->
+        <p v-html="message2"></p>
+
+    </div>
+    <script>
+        new Vue({
+            //绑定一个挂载点
+            el:'#box',
+            //创建一个数据模型  MVVM模型
+            data:{
+                message1:'Vue.js开发基础',
+                message2:'<h3 style="color:red">php中文网</h3>'
+            }
+        })
+    </script>
+</body>
+</html>

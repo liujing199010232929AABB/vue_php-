@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>双向数据绑定和侦听技术</title>
+    <script src="vue-2.6.11/dist/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    <!--双向数据绑定：-->
+    <!--1.单向绑定：用数据模型Modal中的数据来更新页面中的变量-->
+    <!--2.双向绑定：用页面中的变量内容来更新数据模型Model中的数据-->
+    <!--input有一个特点：既可以显示内容，也可以输入内容/更新内容-->
+    <!--<input type="text" :value="info">-->
+    <!--v-model指令可以实现双向绑定：用模板中的变量来更新模型中的变量-->
+    <input type="text" v-model="info">
+    <h3>{{info}}</h3>
+
+</div>
+<script>
+    new Vue({
+        el:'#box',
+        data:{
+            info:'html'
+
+        }
+    })
+</script>
+</body>
+</html>
